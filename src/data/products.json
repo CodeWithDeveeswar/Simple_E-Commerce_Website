@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 16",
+    "price": 90500,
+    "img": "/iPhone.png",
+    "description": "Powerful iPhone with A18 chip, 48MP camera, and Camera Control.",
+    "category": "Phone"
+  },
+  {
+    "id": 2,
+    "name": "Titan Quartz Analog 1712YM02",
+    "price": 2545,
+    "img": "/watch.png",
+    "description": "Classic Titan watch with elegant design for everyday wear.",
+    "category": "Watch"
+  },
+  {
+    "id": 3,
+    "name": "HP Pavilion 14-ep0068TU",
+    "price": 55990,
+    "img": "/laptop.png",
+    "description": "Reliable HP laptop for work, study, entertainment, and daily use.",
+    "category": "Laptop"
+  },
+  {
+    "id": 4,
+    "name": "Samsung Galaxy S25 Ultra",
+    "price": 94999,
+    "img": "/S20-Ultra.png",
+    "description": "Premium Samsung smartphone with a powerful processor, advanced camera system, and stunning display.",
+    "category": "Phone"
+  },
+  {
+    "id": 5,
+    "name": "G-Shock GBD-200",
+    "price": 12995,
+    "img": "/watch2.png",
+    "description": "Rugged G-Shock digital watch with shock resistance, 200-meter water resistance, a sporty design, and a clear digital display.",
+    "category": "Watch"
+  },
+  {
+    "id": 6,
+    "name": "ASUS TUF Gaming F16",
+    "price": 94990,
+    "img": "/laptop2.png",
+    "description": "Powerful ASUS gaming laptop designed for smooth gameplay, multitasking, and demanding applications.",
+    "category": "Laptop"
+  }
+]
