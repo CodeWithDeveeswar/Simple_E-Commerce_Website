@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import products from "../data/products.json";
 import { Link } from "react-router-dom";
 
 function Product({ setCart, search }) {
   const [category, setCategory] = useState("All");
+  const [page, setPage] = useState(1);
+
+  const productPerPage = 3;
+
+  useEffect(() => {
+    setPage(1);
+  }, [category, search]);
 
   const addToCart = (product) => {
     setCart((previous) => {
@@ -27,6 +34,10 @@ function Product({ setCart, search }) {
         product.price.toString().includes(search)),
   );
 
+  const start = (page - 1) * productPerPage;
+  const currentProducts = filterProducts.slice(start, start + productPerPage);
+  const totalPages = Math.ceil(filterProducts.length / productPerPage);
+
   return (
     <>
       <div className="flex justify-center gap-3 my-5">
@@ -43,7 +54,7 @@ function Product({ setCart, search }) {
 
       <div className="grid lg:grid-cols-3 gap-2">
         {filterProducts.length > 0 ? (
-          filterProducts.map((product) => (
+          currentProducts.map((product) => (
             <div key={product.id} className="border rounded-lg p-4 mt-5">
               <img
                 src={product.img}
@@ -78,6 +89,28 @@ function Product({ setCart, search }) {
           </p>
         )}
       </div>
+
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center gap-4 my-6">
+          <button
+            className="bg-black text-white px-4 py-2 rounded disabled:opacity-40"
+            onClick={() => setPage(page - 1)}
+            disabled={page === 1}
+          >
+            Previous
+          </button>
+
+          <span>page {page}</span>
+
+          <button
+            className="bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-40"
+            onClick={() => setPage(page + 1)}
+            disabled={page === totalPages}
+          >
+            Next
+          </button>
+        </div>
+      )}
     </>
   );
 }
