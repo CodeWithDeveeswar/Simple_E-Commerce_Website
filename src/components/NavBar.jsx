@@ -16,7 +16,7 @@ function NavBar({ cart, search, setSearch }) {
             <h2 className="text-2xl font-bold text-blue-600">MyStore</h2>
 
             <div className="hidden md:flex items-center gap-8">
-              <Link to="" className="hover:text-blue-600 font-medium">
+              <Link to="#" className="hover:text-blue-600 font-medium">
                 Home
               </Link>
 
