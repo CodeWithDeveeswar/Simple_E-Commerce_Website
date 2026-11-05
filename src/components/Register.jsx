@@ -25,13 +25,13 @@ const userSchema = yup.object({
 
   password: yup
     .string()
-    .required("Password is required")
-    .min(8, "Password must be at least 8 characters"),
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
 
   confirmPassword: yup
     .string()
-    .required("Confirm password is required")
-    .oneOf([yup.ref("password")], "Passwords must match"),
+    .oneOf([Yup.ref("password"), null], "Passwords must match")
+    .required("Confirm password is required"),
 });
 
 function Register() {
